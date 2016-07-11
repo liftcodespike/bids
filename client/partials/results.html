@@ -1,0 +1,18 @@
+<divng-controller='userController'>
+	<a href="#/" ng-click='logout()'>Logout</a>
+</div>
+
+<div ng-controller='productController'>
+
+	<h1 ng-model='products'>{{products[0].ended_by}} ended the bid.</h1>
+
+	Highest Bidder per product:
+
+	<div ng-repeat='product in products' style="border: thin solid black">
+		<p>{{product.name}}</p>
+		<div ng-repeat=" bid in product.bids | orderBy: '-bid' | limitTo: 1"><p>Name: {{bid.name}} |  Amount: {{bid.bid}}</p></div>
+	</div>
+
+	<button ng-click='startBid()'>Start bid</button>
+
+</div>
