@@ -131,8 +131,6 @@ myApp.controller('productController', function($scope, userFactory, $location, p
 
 					}
 
-					newBid = {}
-					$location.url('/bids')
 
 
 	}

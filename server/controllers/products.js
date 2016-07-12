@@ -38,6 +38,9 @@ module.exports= (function(){
 					})
 				})
 			})
+
+
+			res.json({status: true})
 		},
 
 		getStatus: function(req, res){
