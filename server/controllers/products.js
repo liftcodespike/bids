@@ -7,6 +7,38 @@ var Product = mongoose.model('Product')
 module.exports= (function(){
 
 	return{
+		special: function(req, res){
+			var prod1 = new Product({
+
+					"name" : "product 1",
+					"bids" : [],
+					"status" : "open",
+					"ended_by" : null,
+			
+			})
+			var prod2 = new Product({
+
+					"name" : "product 2",
+					"bids" : [],
+					"status" : "open",
+					"ended_by" : null,
+
+			})
+			var prod3 = new Product({
+					"name" : "product 3",
+					"bids" : [],
+					"status" : "open",
+					"ended_by" : null,
+				
+			})
+			prod1.save(function(err){
+				prod2.save(function(err){
+					prod3.save(function(err){
+
+					})
+				})
+			})
+		},
 
 		getStatus: function(req, res){
 			Product.findOne({}, function(err, product){

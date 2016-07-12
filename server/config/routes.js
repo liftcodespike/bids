@@ -3,6 +3,9 @@ var products = require('./../controllers/products.js')
 
 
 module.exports = function(app){
+	app.get('/special_create_route', function(req,res){
+		products.special(req, res);
+	})
 
 	app.post('/user/create', function(req, res){
 		users.create(req, res)
