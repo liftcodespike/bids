@@ -112,20 +112,18 @@ myApp.controller('productController', function($scope, userFactory, $location, p
 
 
 
-							productFactory.addBid(newBid, id)
-
-							productFactory.getProducts(function(data){
+							productFactory.addBid(newBid, id, function(){
+								productFactory.getProducts(function(data){
 									$scope.products = data
 
-									if($scope.products[0]['status']== 'closed'){
 
-										$location.url('/results')
-
-									}else{
 
 										$location.url('/bids')
-									}
+									
 								})
+							})
+
+							
 						}
 
 

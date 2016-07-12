@@ -35,7 +35,7 @@ myApp.factory('productFactory', function($http, $location){
 		})
 	}
 
-	factory.addBid = function(newBid, id){
+	factory.addBid = function(newBid, id, calback){
 
 		var data =  {bid:  newBid, _id: id}
 

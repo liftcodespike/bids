@@ -84,9 +84,12 @@ module.exports= (function(){
 
 					console.log(err)
 				}
+
+
+				res.json({status:true})
 			})
 
-			res.json({status:true})
+			
 		}, 
 
 		newBid: function(req, res){
@@ -103,7 +106,7 @@ module.exports= (function(){
 
 					product.bids.push(bid)
 
-					console.log(product)
+					
 
 					product.save(function(err){
 
